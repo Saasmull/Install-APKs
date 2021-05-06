@@ -1,4 +1,4 @@
-# install-apk
+# How to install .apk-Files with Java
 
 >**Note: You need different Intents for different API Levels**
 
@@ -29,3 +29,6 @@
 # for API 26 to 28
 
 # for API 29 to 30
+
+It's the [same](#for-api-21-to-25) Methode for API 21 to 25
+
