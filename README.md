@@ -28,6 +28,20 @@
 
 # for API 26 to 28
 
+```java
+    //define the path
+    path = "storage/emulated/0/folder/app.apk";
+    
+    //use StrictMode
+    StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().build());
+    //create and define the Intent
+    Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
+    //set the path and the type for the .apk-File
+    intent.setDataAndType(Uri.fromFile(new java.io.File(path)));
+    //startActivity for this intent
+    startActivity(intent);
+```
+
 # for API 29 to 30
 
 It's the [same](#for-api-21-to-25) Methode for API 21 to 25
