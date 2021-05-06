@@ -7,7 +7,11 @@ Here you can learn how to install .apk-Files with Java on Android Devices
 For reading the storage you need: 
 
 ```XML
-   <read=true>
+   <?xml version="1.0" encoding="utf-8"?>
+      <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+      </manifest>
 ```
 
 # check unknown sources
