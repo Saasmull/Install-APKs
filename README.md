@@ -1,5 +1,18 @@
 # How to install .apk-Files with Java
 
+Here you can learn how to install .apk-Files with Java on Android Devices
+
+# manifest
+
+For reading the storage you need: 
+
+```XML
+   <read=true>
+```
+
+# check unknown sources
+
+
 >**Note: You need different Intents for different API Levels**
 
 | Android-Version             | SDK/API | Intent                                                                                                            | Methode |
@@ -10,14 +23,25 @@
     
 # for API 21 to 25
 
+It uses the Intent [`ACTION_VIEW`](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW).
+
+First define the Path to the .apk-File:
 ```java
     //define the path
     path = "storage/emulated/0/folder/app.apk";
-    
-    //use StrictMode
+```
+Then use the StrictMode:
+```java
+    //use the StrictMode
     StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().build());
+```
+After that create and define the Intent with [`ACTION_VIEW`](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW):
+```java
     //create and define the Intent
     Intent intent = new Intent(Intent.ACTION_VIEW);
+```
+You must also define the File and the Type for the Intent. We use our defined variable [`path`](#
+```java
     //set the path and the type for the .apk-File
     intent.setDataAndType(Uri.fromFile(new java.io.File(path)),"application/vnd.android.package-archive");
     //setFlags to hide Error
@@ -27,6 +51,8 @@
 ```
 
 # for API 26 to 28
+
+>**Note: This Methode works only from API 26 to 28 and is deprecated for API 29 and higher. You can read it [here](https://developer.android.com/reference/android/content/Intent.html#ACTION_INSTALL_PACKAGE).**
 
 ```java
     //define the path
