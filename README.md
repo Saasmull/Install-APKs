@@ -40,7 +40,7 @@ startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOU
 |:----------------------------|:--------|:------------------------------------------------------------------------------------------------------------------|:--------|
 | 5.0(Lollipop) - 7.1(Nougat) | 21-25   | [`ACTION_VIEW`](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW)                       | [Here](#for-api-21-to-25)
 | 8.0(Oreo) - 9.0(Pie)        | 26-28   | [`ACTION_INSTALL_PACKAGE`](https://developer.android.com/reference/android/content/Intent#ACTION_INSTALL_PACKAGE) | [Here](#for-api-26-to-28)
-| 10-11                       | 29-30   | [`ACTION_VIEW`](https://developer.android.com/reference/android/content/Intent#ACTION_VIEW)                       | [Here](#for-api-29-to-30)
+| 10-11                       | 29-30   | [`MODE_FULL_INSTALL`](https://developer.android.com/reference/android/content/pm/PackageInstaller.SessionParams#MODE_FULL_INSTALL)                       | [Here](#for-api-29-to-30)
     
 # for API 21 to 25
 
@@ -109,5 +109,6 @@ You must also define the File for the Intent. We use our defined variable [`path
 
 # for API 29 to 30
 
-It's the [same](#for-api-21-to-25) Methode for API 21 to 25
+Use PackageInstaller().
+I havn't found anything about that. 😕
 
