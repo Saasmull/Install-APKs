@@ -23,6 +23,15 @@ To install the .apk-File on API Level 26 and higher allow [`REQUEST_INSTALL_PACK
 
 # Check unknown sources
 
+First we need to check that this App can install 3rd-Party-Apps without the PlayStore. For this we need to check the Settings for this App with:
+```java
+if(!getPackageManager().canRequstPackageInstalls())
+```
+If the option [`ACTION_MANAGE_UNKNOWN_APP_SOURCES`](https://developer.android.com/reference/android/provider/Settings#ACTION_MANAGE_UNKNOWN_APP_SOURCES) is disabled for this App than we can open the setting for this package for the user with this code:
+```java
+startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:COM.PACKAGE.NAME")));
+```
+
 # Starting the Installation
 
 >**Note: You need different Intents for different API Levels**
