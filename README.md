@@ -2,7 +2,15 @@
 
 Here you can learn how to install .apk-Files with Java on Android Devices
 
-# manifest
+Content:
+ 1. [Manifest](#manifest)
+ 2. [Check unknown sources](#check-unknown-sources)
+ 3. [Starting the Installation](#starting-the-installation)
+    + [...for API 21 to 25](#for-api-21-to-25)
+    + [...for API 26 to 28](#for-api-26-to-28)
+    + [...for API 29 to 30](#for-api-29-to-30)
+
+# Manifest
 
 For reading the storage you need: 
 ```XML
@@ -13,8 +21,9 @@ To install the .apk-File on API Level 26 and higher allow [`REQUEST_INSTALL_PACK
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 ```
 
-# check unknown sources
+# Check unknown sources
 
+# Starting the Installation
 
 >**Note: You need different Intents for different API Levels**
 
