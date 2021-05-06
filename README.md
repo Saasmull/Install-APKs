@@ -40,12 +40,18 @@ After that create and define the Intent with [`ACTION_VIEW`](https://developer.a
     //create and define the Intent
     Intent intent = new Intent(Intent.ACTION_VIEW);
 ```
-You must also define the File and the Type for the Intent. We use our defined variable [`path`](#
+You must also define the File and the Type for the Intent. We use our defined variable [`path`](#for-api-21-to-25) as the data and the type [`application/vnd.android.package-archive`](https://mimetype.io/application/vnd.android.package-archive) like this:
 ```java
     //set the path and the type for the .apk-File
     intent.setDataAndType(Uri.fromFile(new java.io.File(path)),"application/vnd.android.package-archive");
+ ```
+ Then use [`FLAG_ACTIVITY_NEW_TASK`](https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_NEW_TASK) to define an atomic group of activities that the user can move to:
+ ```java
     //setFlags to hide Error
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+```
+And at the last you can start the installation with this code:
+```java
     //startActivity for this intent
     startActivity(intent);
 ```
