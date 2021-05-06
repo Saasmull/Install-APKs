@@ -86,8 +86,14 @@ After that create and define the Intent with [`ACTION_INSTALL_PACKAGE`](https://
 ```java
     //create and define the Intent
     Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
+```
+You must also define the File for the Intent. We use our defined variable [`path`](#for-api-21-to-25) as the data like this:
+```java
     //set the path and the type for the .apk-File
     intent.setDataAndType(Uri.fromFile(new java.io.File(path)));
+ ```
+ And at the last you can start the Installation with this code:
+ ```java
     //startActivity for this intent
     startActivity(intent);
 ```
