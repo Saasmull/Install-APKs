@@ -100,9 +100,9 @@ You must also define the File for the Intent. We use our defined variable [`path
 ```java
     //set the path and the type for the .apk-File
     intent.setDataAndType(Uri.fromFile(new java.io.File(path)));
- ```
+```
  And at the last you can start the Installation with this code:
- ```java
+```java
     //startActivity for this intent
     startActivity(intent);
 ```
