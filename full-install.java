@@ -2,8 +2,8 @@
     path = "storage/emulated/0/folder/app.apk";
     
     //check SDK for both installations
-    if(android.os.Build.VERSION.SDK_INT < 26 | android.os.Build.VERSION.SDK_INT > 29){
-      //install for Android 7.1/SDK 25 and lower and Android 10/SDK 30 and higher
+    if(android.os.Build.VERSION.SDK_INT < 26){
+      //install for Android 7.1/SDK 25 and lower
       StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().build());
       Intent intent = new Intent(Intent.ACTION_VIEW);
       intent.setDataAndType(Uri.fromFile(new java.io.File(path)),"application/vnd.android.package-archive");
